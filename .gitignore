@@ -1,0 +1,41 @@
+# ======================
+# OS FILES
+# ======================
+.DS_Store
+Thumbs.db
+
+# ======================
+# BACKEND (Flask / Python)
+# ======================
+backend/venv/
+backend/__pycache__/
+backend/*.pyc
+backend/*.pyo
+backend/*.pyd
+backend/.Python
+
+# Environment variables
+backend/.env
+
+# ======================
+# FRONTEND (React / Vite)
+# ======================
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# Logs
+frontend/npm-debug.log*
+frontend/yarn-debug.log*
+frontend/yarn-error.log*
+
+# ======================
+# IDE / EDITOR
+# ======================
+.vscode/
+.idea/
+
+# ======================
+# Misc
+# ======================
+*.log
