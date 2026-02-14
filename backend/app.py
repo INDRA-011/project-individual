@@ -1,14 +1,11 @@
 from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from routes.auth_routes import auth_bp
 
 app = Flask(__name__)
-CORS(app, resources={r"/*": {"origins": "http://localhost:5174"}})
+CORS(app)
 
-app.register_blueprint(auth_bp, url_prefix="/api")
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/student_portal_db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
-
-print(app.url_map)
+db = SQLAlchemy(app)
