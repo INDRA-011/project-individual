@@ -6,7 +6,7 @@ from sqlalchemy.exc import IntegrityError
 from models import db, User, Course, Enrollment, Mark, Notice
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r"/*": {"origins": "http://localhost:5173"}})
 
 # 🔹 Configure MySQL
 app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:@localhost/student_portal_database'
@@ -60,9 +60,16 @@ def login():
     user = User.query.filter_by(email=data['email']).first()
 
     if user and user.password == data['password']:
-        return jsonify({"message": "Login successful"})
+        return jsonify({
+            "success": True,
+            "user_id": user.id,
+            "username": user.username
+        }), 200
     else:
-        return jsonify({"message": "Invalid credentials"}), 401
+        return jsonify({
+            "success": False,
+            "message": "Invalid credentials"
+        }), 401
 
 
 @app.route('/courses/<int:user_id>', methods=['GET'])
