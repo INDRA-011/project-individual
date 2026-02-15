@@ -9,8 +9,8 @@ import Marks from "./pages/Marks";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 
-import Layout from "./components/Layout";
-import ProtectedRoute from "./components/ProtectedRoute";
+import Layout from "./componenets/Layout";
+import ProtectedRoute from "./componenets/ProtectedRoute";
 
 function App() {
   return (
