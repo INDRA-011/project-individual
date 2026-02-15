@@ -1,5 +1,10 @@
 import { Link } from "react-router-dom";
 
+const handleLogout = () => {
+  localStorage.clear();
+  window.location.href = "/login";
+};
+
 const Sidebar = () => {
   return (
     <div className="w-64 bg-gray-800 text-white min-h-screen p-5">
@@ -21,18 +26,18 @@ const Sidebar = () => {
         <li>
           <Link to="/dashboard/profile">Profile</Link>
         </li>
+        <li>
+          <Link to="/dashboard/notices" className="mb-3">
+            Notices
+          </Link>
+        </li>
 
         <li>
           <Link to="/dashboard/settings">Settings</Link>
         </li>
 
         <li>
-          <button
-            onClick={() => {
-              localStorage.removeItem("token");
-              window.location.href = "/login";
-            }}
-          >
+          <button onClick={handleLogout} className="text-red-600 mt-4">
             Logout
           </button>
         </li>

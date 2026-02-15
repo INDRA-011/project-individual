@@ -8,6 +8,7 @@ import Courses from "./pages/Courses";
 import Marks from "./pages/Marks";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
+import Notices from "./pages/Notices";
 
 import Layout from "./componenets/Layout";
 import ProtectedRoute from "./componenets/ProtectedRoute";
@@ -34,6 +35,7 @@ function App() {
         <Route path="marks" element={<Marks />} />
         <Route path="profile" element={<Profile />} />
         <Route path="settings" element={<Settings />} />
+        <Route path="notices" element={<Notices />} />
       </Route>
     </Routes>
   );
