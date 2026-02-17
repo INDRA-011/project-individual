@@ -9,6 +9,7 @@ import Marks from "./pages/Marks";
 import Profile from "./pages/Profile";
 import Settings from "./pages/Settings";
 import Notices from "./pages/Notices";
+import Footer from "./componenets/Footer";
 
 import Layout from "./componenets/Layout";
 import ProtectedRoute from "./componenets/ProtectedRoute";
