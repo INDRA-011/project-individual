@@ -92,5 +92,6 @@ const Login = () => {
     </div>
   );
 };
+console.log("User ID from localStorage:", localStorage.getItem("user_id"));
 
 export default Login;

@@ -27,6 +27,8 @@ class Enrollment(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     course_id = db.Column(db.Integer, db.ForeignKey('courses.id'))
+    username = db.Column(db.String(100))
+    course_name = db.Column(db.String(150)) 
 
 class Mark(db.Model):
     __tablename__ = 'marks'

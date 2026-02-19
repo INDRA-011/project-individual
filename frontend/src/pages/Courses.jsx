@@ -5,7 +5,7 @@ const Courses = () => {
   const [courses, setCourses] = useState([]);
 
   useEffect(() => {
-    API.get("/courses/1")
+     API.get("/courses")
       .then((res) => {
         setCourses(res.data.courses);
       })
